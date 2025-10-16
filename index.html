@@ -1,155 +1,343 @@
-\documentclass[11pt, a4paper]{moderncv}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulmonem Chitour - Professional CV</title>
+    <!-- تحميل Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تحميل خطوط Inter و Noto Kufi Arabic لضمان دعم العربية والإنجليزية -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* تعريف الألوان المخصصة المشابهة لـ moderncv color blue */
+        :root {
+            --primary-blue: #007bff; /* مشابه لأزرق moderncv */
+            --accent-light: #f3f4f6;
+            --text-gray: #4b5563;
+        }
 
-% Load required packages
-\usepackage{fontspec}
+        /* تطبيق الخطوط */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #e5e7eb; /* خلفية رمادية فاتحة */
+        }
 
-% FIX: We remove the 'bidi' option and only load English, as it's an English CV.
-% The 'moderncv' class handles its layout well, and bidi is not needed here.
-\usepackage[english]{babel}
+        .arabic-text {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
 
-% Set default font (Noto Sans is preferred for modern CVs)
-% Using \setmainfont is a safer alternative to \babelfont for standard XeLaTeX/LuaLaTeX compilation
-\setmainfont{Noto Sans}
+        /* نمط العنوان الرئيسي (اسم) */
+        .cv-header-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            line-height: 1.1;
+        }
 
-% Moderncv themes
-\moderncvstyle{classic} % 'banking', 'casual', 'classic', 'empty'
-\moderncvcolor{blue}    % 'blue', 'orange', 'green', 'red', 'purple'
+        /* نمط عنوان القسم */
+        .cv-section-title {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
 
-% Adjust margins for A4 paper and clean look
-\usepackage[a4paper,
-  top=1.5cm,
-  bottom=1.5cm,
-  left=2cm,
-  right=2cm,
-  marginparwidth=1.75cm]{geometry}
+        /* نمط العناصر المميزة (مثل التواريخ في moderncv) */
+        .cv-hint {
+            color: var(--primary-blue);
+            font-weight: 600;
+            flex-shrink: 0; /* منع التقليص */
+            width: 15%;
+            min-width: 100px; /* لضمان عرض جيد على الموبايل */
+        }
+        
+        .cv-item-content {
+            flex-grow: 1;
+        }
+        
+        /* نمط لعنصر الخبرة الكامل */
+        .cv-entry {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 640px) {
+            .cv-entry {
+                flex-direction: column;
+            }
+            .cv-hint {
+                width: 100%;
+                margin-bottom: 0.25rem;
+            }
+            .cv-entry > div {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
 
-% Personal details
-\name{Abdulmonem}{Chitour}
-\title{Media Professional, Press Editor, and Digital Strategist}
+<body class="p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl p-6 sm:p-10">
 
-\address{Msheireb, Doha}{}
-\phone[mobile]{+974 5075 3590}
-\email{chitour1@hotmail.fr}
-% ID Number is included in the Profile section for professional context
+        <!-- =================================== -->
+        <!-- 1. HEADER (الرأس) -->
+        <!-- =================================== -->
+        <header class="pb-6 border-b-4 border-gray-200 mb-6">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                
+                <!-- Placeholder الصورة -->
+                <div class="w-20 h-20 bg-gray-200 rounded-full mr-4 mb-4 sm:mb-0 flex items-center justify-center text-gray-500 font-bold text-sm">
+                    
+                </div>
+                
+                <div class="flex-grow">
+                    <h1 class="cv-header-name">Abdulmonem Chitour</h1>
+                    <p class="text-xl font-medium text-gray-600 mt-1">Journalist, Press Editor</p>
 
-% --- Begin Document ---
-\begin{document}
+                    <!-- تفاصيل الاتصال -->
+                    <div class="text-sm mt-3 space-y-1 text-gray-700">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-blue-500"><i class="fas fa-map-marker-alt"></i></span>
+                            <span class="">Msheireb, Doha, Qatar</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-blue-500"><i class="fas fa-phone-alt"></i></span>
+                            <span class="ltr">0097450753590</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-blue-500"><i class="fas fa-envelope"></i></span>
+                            <span class="ltr">chitour1@hotmail.fr</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-blue-500"><i class="fas fa-id-card"></i></span>
+                            <span class="ltr">ID Number: 28801200698</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-\makecvtitle
+        <!-- =================================== -->
+        <!-- 2. PROFESSIONAL PROFILE (ملخص مهني) -->
+        <!-- =================================== -->
+        <section class="mb-8">
+            <h2 class="cv-section-title">Professional Profile</h2>
+            <p class="text-gray-700 leading-relaxed text-justify">
+                A media professional with over 7 years of experience in journalism, content creation, and digital marketing. Highly skilled in covering sensitive topics comprehensively, producing original and innovative content, and managing all facets of social media (publishing, paid advertising, and audience engagement). Proficient in leveraging AI tools to boost reach and credibility. Dedicated to providing constructive analysis to elevate public awareness and dialogue, demonstrating creativity and proactive leadership within team environments.
+            </p>
+        </section>
 
-% 1. PROFILE & SKILLS (Page 1 - Top)
-\section{Professional Profile}
-\cvitem{}
-{
-  A dedicated and experienced Media Professional, Press Editor, and Content Creator with over 7 years of expertise in print and visual media, coupled with advanced proficiency in social media management, digital marketing, and AI-driven content strategy. Proven ability to cover sensitive issues comprehensively, produce original and innovative content, and drive professional dialogue and audience engagement across multiple platforms. Results-oriented, proactive, and effective team contributor.
-  \vspace{0.2cm} % The blank line that caused the error was removed here.
-  \textit{Relevant Detail: ID Number 28801200698}
-}
+        <!-- =================================== -->
+        <!-- 3. PROFESSIONAL EXPERIENCE (الخبرة المهنية) -->
+        <!-- =================================== -->
+        <section class="mb-8">
+            <h2 class="cv-section-title">Professional Experience</h2>
 
-\section{Core Skills}
-\cvitem{Media \& Content}
-{Journalism, Press Editing, Scriptwriting, Podcast Production, Video Montage (Adobe Premiere), Content Creation (Original/Innovative), Crisis Communication, Public Speaking/Presentation.}
-\cvitem{Digital \& Marketing}
-{Social Media Strategy (Facebook, X/Twitter, YouTube, Instagram, TikTok, Telegram, WhatsApp, BAZ), Paid Advertising (Campaign Management), AI for Content/Engagement, Network Marketing, Web Admin.}
-\cvitem{Technical}
-{Microsoft Office (Excellent), Adobe Photoshop, Spider Networks, Blogs, Adobe Premiere.}
+            <!-- Entry 1 -->
+            <div class="cv-entry">
+                <div class="cv-hint">2023 -- Current</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">Media Officer, Head of Social Media Department</h3>
+                    <p class="text-gray-600 italic mb-2">Arab Center for Research and Policy Studies | Qatar</p>
+                    <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
+                        <li>Managed and promoted all news, books, studies, and programs on the center's social media platforms (Facebook, Twitter, YouTube, Instagram, Telegram, WhatsApp, BAZ).</li>
+                        <li>Provided comprehensive event coverage (pre, during, and post) to enhance public presence and engagement through live/recorded broadcasts and interactive posts.</li>
+                        <li>Executed paid promotional campaigns for live streams and publications across various digital platforms.</li>
+                        <li>Organized and archived media materials, including creating playlists for seminars and conferences on Facebook and YouTube.</li>
+                        <li>Developed targeted content (book compilations, quotes) before major events to generate audience interest.</li>
+                        <li>Conducted and published filmed statements with guests and participants from seminars.</li>
+                        <li>Created introductory scripts for books and summarized situation assessments for podcast distribution.</li>
+                        <li>Managed financial follow-up with the finance department for paid advertising and subscriptions.</li>
+                        <li>Drove audience interaction by posing engaging questions and publishing attention-grabbing content.</li>
+                        <li>Managed message responses across platforms and actively worked to expand the follower base.</li>
+                        <li>Prepared detailed performance reports for social media accounts and provided strategic recommendations.</li>
+                    </ul>
+                </div>
+            </div>
 
-% 2. PROFESSIONAL EXPERIENCE (Page 1 & 2)
-\section{Professional Experience}
+            <!-- Entry 2 -->
+            <div class="cv-entry">
+                <div class="cv-hint">2017 -- 2018</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">Director</h3>
+                    <p class="text-gray-600 italic mb-2">Al-Kashef News Network | Algeria</p>
+                    <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
+                        <li>Directed a news network covering national, regional (Arab world), and international sports and general news.</li>
+                        <li>Managed the online news portal, publishing timely and analytical articles across political, sports, cultural, and religious domains.</li>
+                        <li>Oversaw and managed all social media accounts, including content publishing, audience interaction, response to inquiries, and implementation of advertising campaigns.</li>
+                    </ul>
+                </div>
+            </div>
 
-\subsection{Media \& Digital Strategy (Qatar)}
-\cventry{2023 - Present}{Media Officer, Head of Social Media Department}{Arab Center for Research and Policy Studies (ACRPS)}{Doha, Qatar}{}{
-  \begin{itemize}
-    \item Developed and managed a comprehensive social media strategy to disseminate all ACRPS news, books, studies, and programs across 7+ platforms (Facebook, X, YouTube, Instagram, TikTok, Telegram, WhatsApp, BAZ).
-    \item Led the paid promotion efforts (boosting live broadcasts and publications) across various social media platforms, managing budgets and optimizing campaign performance.
-    \item Managed real-time coverage of high-profile events, seminars, and conferences, including pre-event promotion, live streams, Q\&A sessions, and post-event content archiving (videos and photos).
-    \item Created and produced original content, including book introduction scripts and condensed situation assessment summaries for podcast publication.
-    \item Significantly increased audience engagement by initiating interactive questions and discussions to foster cultural dialogue among followers.
-    \item Conducted regular performance reports on social media accounts, providing data-driven recommendations for growth and optimization.
-  \end{itemize}
-}
+            <!-- Entry 3 (Single Line) -->
+            <div class="cv-entry">
+                <div class="cv-hint">2015 -- 2017</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">General Supervisor</h3>
+                    <p class="text-gray-600 italic">"Al-Tarekh Yatathadath" (History Speaks) Program, Echourouk News Channel</p>
+                </div>
+            </div>
 
-\subsection{Journalism \& Media (Algeria)}
-\cventry{2017 - 2018}{Director}{Al-Kashef News Network}{Algeria}{}{
-  \begin{itemize}
-    \item Directed an independent news network covering Algerian, Arab, and international news and sports.
-    \item Managed the electronic interface (website), publishing both breaking news and in-depth analytical articles across political, sports, cultural, and religious domains.
-    \item Oversaw social media accounts, managing content publishing, audience interaction, responding to inquiries, and running site-wide advertising campaigns.
-  \end{itemize}
-}
+            <!-- Entry 4 (Single Line) -->
+            <div class="cv-entry">
+                <div class="cv-hint">2015</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">Preparation and Presentation</h3>
+                    <p class="text-gray-600 italic">"Al-Kashef" Program, Echourouk TV</p>
+                </div>
+            </div>
+            
+            <!-- Entry 5 (Single Line) -->
+            <div class="cv-entry">
+                <div class="cv-hint">2013 -- 2015</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">Journalist</h3>
+                    <p class="text-gray-600 italic">Echourouk El Yaoumi (The Daily Echourouk) Newspaper | Algeria</p>
+                </div>
+            </div>
 
-\cventry{2015 - 2017}{General Supervisor}{"Al-Tarekh Yatathadath" (History Speaks) Program, Echourouk News TV}{Algeria}{}{
-  \begin{itemize}
-    \item Oversaw the content and production of a historical talk show broadcast on a major Algerian news channel.
-  \end{itemize}
-}
+            <!-- Entry 6 (Single Line) -->
+            <div class="cv-entry">
+                <div class="cv-hint">2013 -- 2015</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">Assistant Program Preparation</h3>
+                    <p class="text-gray-600 italic">"Al-Halaka Al-Mafqouda" (The Missing Link) Program, Echourouk News Channel</p>
+                </div>
+            </div>
 
-\cventry{2015}{Program Preparer and Presenter}{"Al-Kashef" Program, Echourouk Public Channel}{Algeria}{}{
-  \begin{itemize}
-    \item Coordinated content preparation and presented the show live, linking editorial output with the Echourouk newspaper and forum.
-  \end{itemize}
-}
+            <!-- Entry 7 -->
+            <div class="cv-entry">
+                <div class="cv-hint">2013 -- 2014</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">Admin</h3>
+                    <p class="text-gray-600 italic mb-2">Official Facebook Page of Echourouk El Yaoumi Newspaper</p>
+                    <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
+                        <li>Published news and motivational posts aimed at driving follower engagement.</li>
+                        <li>Monitored comments and interactions, and responded to key issues or inquiries raised by the audience.</li>
+                        <li>Enhanced content visibility and audience engagement through continuous monitoring and responsive communication.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Entry 8 -->
+            <div class="cv-entry">
+                <div class="cv-hint">2023</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">Director of the Advertising and Marketing Department</h3>
+                    <p class="text-gray-600 italic mb-2">New Target for Contracting and Services | Qatar</p>
+                    <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
+                        <li>Executed advertising campaigns across various social media platforms (Facebook, Instagram, TikTok, Twitter, and Snapchat).</li>
+                        <li>Assisted in the creation of videos and designs tailored to influence the target audience effectively.</li>
+                        <li>Developed highly creative and innovative content to promote the company's brand.</li>
+                        <li>Activated paid advertisements based on a careful study of the projected budget across different platforms.</li>
+                        <li>Evaluated advertisement performance and sought out advertising opportunities beyond social media channels.</li>
+                    </ul>
+                </div>
+            </div>
 
-\cventry{2013 - 2015}{Journalist}{Echourouk El Yaoumi (The Daily Echourouk) Newspaper}{Algeria}{}{
-  \begin{itemize}
-    \item Contributed to the national, international, and sports sections of the leading national daily newspaper.
-  \end{itemize}
-}
+            <!-- Entry 9 (Single Line) -->
+            <div class="cv-entry">
+                <div class="cv-hint">2011 -- 2019</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">Analysis and Discussion Participant</h3>
+                    <p class="text-gray-600 italic">Al Arabiya and Echourouk Channels and Algerian Newspapers</p>
+                </div>
+            </div>
 
-\cventry{2013 - 2015}{Assistant Preparer}{"Al-Halaka Al-Mafqouda" (The Missing Link) Program, Echourouk News TV}{Algeria}{}{
-  \begin{itemize}
-    \item Assisted in the preparation and research for the popular investigative program.
-  \end{itemize}
-}
+            <!-- Entry 10 -->
+            <div class="cv-entry">
+                <div class="cv-hint">Year</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">Secretary and Marketing Representative</h3>
+                    <p class="text-gray-600 italic mb-2">Magic Real Estate Company | Muaither, Qatar</p>
+                    <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
+                        <li>Managed the company's social media accounts, ensuring consistent and engaging presence.</li>
+                        <li>Prepared and drafted necessary contracts and statements for company operations.</li>
+                        <li>Assessed the quality and impact of published content by surveying audience engagement and interactions.</li>
+                        <li>Efficiently managed and responded to messages, actively following up on followers' concerns and inquiries.</li>
+                    </ul>
+                </div>
+            </div>
 
-\cventry{2013 - 2014}{Facebook Page Administrator}{Official Facebook Page of Echourouk El Yaoumi Newspaper}{Algeria}{}{
-  \begin{itemize}
-    \item Published news and motivational posts to drive follower interaction and engagement.
-    \item Monitored and responded to comments, addressing key issues and inquiries raised by the audience.
-  \end{itemize}
-}
+        </section>
 
-% 3. MARKETING & BUSINESS DEVELOPMENT (Page 2 - Bottom)
-\section{Marketing and Business Development}
+        <!-- =================================== -->
+        <!-- 4. EDUCATION AND TRAINING (التعليم والتدريب) -->
+        <!-- =================================== -->
+        <section class="mb-8">
+            <h2 class="cv-section-title">Education and Certificates</h2>
 
-\cventry{2023}{Director of Advertising and Marketing Department}{New Target for Contracting and Services}{Qatar}{}{
-  \begin{itemize}
-    \item Developed and executed targeted paid advertising campaigns across Facebook, Instagram, TikTok, X (Twitter), and Snapchat.
-    \item Collaborated on the production of impactful videos and creative designs aimed at influencing the target market.
-    \item Responsible for generating highly creative and innovative content to promote company services.
-    \item Managed paid advertisement activation by conducting budget analysis across various digital platforms.
-    \item Evaluated advertisement performance and sought out non-social media advertising opportunities.
-  \end{itemize}
-}
+            <div class="cv-entry">
+                <div class="cv-hint">2015</div>
+                <div class="cv-item-content pl-4">
+                    <h3 class="font-bold text-lg leading-tight text-gray-800">Bachelor's Degree - Islamic Sciences</h3>
+                    <p class="text-gray-600 italic">Prince Abdelkader University | Constantine, Algeria</p>
+                </div>
+            </div>
+        </section>
 
-\cventry{Dates not specified}{Secretary and Marketing Representative}{Magic Real Estate Company}{Muaither}{}{
-  \begin{itemize}
-    \item Managed the company's social media accounts and digital presence.
-    \item Prepared real estate contracts and official company statements.
-    \item Evaluated post quality by analyzing audience interaction and engagement metrics.
-    \item Managed audience communication, responding effectively to messages and follower inquiries.
-  \end{itemize}
-}
+        <!-- =================================== -->
+        <!-- 5. SKILLS (المهارات) -->
+        <!-- =================================== -->
+        <section class="mb-8">
+            <h2 class="cv-section-title">Skills</h2>
 
-\cventry{2011 - 2019}{Media Analyst/Commentator}{Various Media Outlets (Al Arabiya, Echourouk, Algerian Newspapers)}{}{}{
-  \begin{itemize}
-    \item Regularly participated in media analysis and discussion panels on both regional and national television channels and print media.
-  \end{itemize}
-}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Computer Skills -->
+                <div>
+                    <h3 class="font-bold text-blue-700 mb-2">Computer Skills</h3>
+                    <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
+                        <li>Excellent proficiency in Office programs.</li>
+                        <li>Competent in using Adobe Photoshop.</li>
+                        <li>Good proficiency in managing spider networks and blogs.</li>
+                        <li>Skilled in using Adobe Premiere for video editing and montage.</li>
+                    </ul>
+                </div>
 
-% 4. EDUCATION & LANGUAGES (Page 3)
-\section{Education}
-\cventry{2015}{Bachelor's Degree in Islamic Sciences}{Prince Abdelkader University}{Constantine, Algeria}{}{}
+                <!-- Languages -->
+                <div>
+                    <h3 class="font-bold text-blue-700 mb-2">Languages</h3>
+                    <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
+                        <li><strong class="font-semibold">Arabic:</strong> Proficient</li>
+                        <li><strong class="font-semibold">English:</strong> Proficient</li>
+                        <li><strong class="font-semibold">French:</strong> Intermediate</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-\section{Languages}
-\cvitem{Arabic}{Proficient (Native Language)}
-\cvitem{English}{Proficient}
-\cvitem{French}{Intermediate}
+        <!-- =================================== -->
+        <!-- 6. PORTFOLIO (محفظة الأعمال) -->
+        <!-- =================================== -->
+        <section class="mb-4">
+            <h2 class="cv-section-title">Portfolio</h2>
+            
+            <div class="space-y-2 text-sm text-gray-700">
+                <div class="flex items-center">
+                    <span class="font-semibold w-40 flex-shrink-0">Visual Media Samples:</span>
+                    <a href="https://t.co/aE2G9SeIpx" target="_blank" class="text-blue-600 hover:text-blue-800 underline break-all ltr">https://t.co/aE2G9SeIpx</a>
+                </div>
+                <div class="flex items-center">
+                    <span class="font-semibold w-40 flex-shrink-0">Written Media Samples:</span>
+                    <a href="https://t.co/Gu4IWFV5ee" target="_blank" class="text-blue-600 hover:text-blue-800 underline break-all ltr">https://t.co/Gu4IWFV5ee</a>
+                </div>
+                <div class="flex items-center">
+                    <span class="font-semibold w-40 flex-shrink-0">Social Media Samples:</span>
+                    <a href="https://t.co/B0kZFzhWTb" target="_blank" class="text-blue-600 hover:text-blue-800 underline break-all ltr">https://t.co/B0kZFzhWTb</a>
+                </div>
+            </div>
+        </section>
 
-% 5. PORTFOLIO (Page 3 - Bottom)
-\section{Portfolio}
-\cvitem{Visual Media Work}{\url{https://t.co/aE2G9SeIpx}}
-\cvitem{Written Media Work}{\url{https://t.co/Gu4IWFV5ee}}
-\cvitem{Social Media Management Samples}{\url{https://t.co/B0kZFzhWTb}}
+        <footer class="mt-8 pt-4 border-t text-center text-sm text-gray-500">
+            <!-- تمت إزالة رقم الصفحة من هنا، حيث يتم عادة طباعتها في PDF -->
+            <p>Curriculum Vitae of Abdulmonem Chitour</p>
+        </footer>
+    </div>
 
-\end{document}
+    <!-- Font Awesome for Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
