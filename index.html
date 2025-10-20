@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulmonem Chitour - Professional CV</title>
+    <title>عبد المنعم شيتور - سيرة ذاتية احترافية</title>
     <!-- تحميل Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- تحميل خطوط Inter و Noto Kufi Arabic لضمان دعم العربية والإنجليزية -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <!-- تحميل خط Cairo ليتناسب مع الطلب -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
         /* تعريف الألوان المخصصة المشابهة لـ moderncv color blue */
         :root {
@@ -17,15 +17,11 @@
             --header-bg: #e0f2fe; /* لون خفيف ومميز للرأسية (أزرق فاتح جداً) */
         }
 
-        /* تطبيق الخطوط */
+        /* تطبيق الخطوط - استخدام Cairo للغة العربية */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Cairo', sans-serif, 'Inter'; /* خط القاهرة للعربية */
             color: #333;
             background-color: #e5e7eb; /* خلفية رمادية فاتحة */
-        }
-
-        .arabic-text {
-            font-family: 'Noto Naskh Arabic', serif;
         }
 
         /* نمط العنوان الرئيسي (اسم) */
@@ -49,10 +45,12 @@
         /* نمط العناصر المميزة (مثل التواريخ في moderncv) */
         .cv-hint {
             color: var(--primary-blue);
-            font-weight: 600;
+            font-weight: 700; /* جعل الخط أسمك قليلاً لـ Cairo */
             flex-shrink: 0; /* منع التقليص */
             width: 15%;
             min-width: 100px; /* لضمان عرض جيد على الموبايل */
+            text-align: left; /* للتأكد من أن التاريخ يظهر على الطرف الأيمن في RTL */
+            padding-right: 0.5rem;
         }
         
         .cv-item-content {
@@ -65,6 +63,7 @@
             margin-bottom: 1.5rem;
         }
         
+        /* تعديلات استجابة الشاشة الصغيرة */
         @media (max-width: 640px) {
             .cv-entry {
                 flex-direction: column;
@@ -72,9 +71,10 @@
             .cv-hint {
                 width: 100%;
                 margin-bottom: 0.25rem;
+                text-align: right;
             }
             .cv-entry > div {
-                padding-left: 0;
+                padding-right: 0;
             }
         }
     </style>
@@ -84,41 +84,41 @@
     <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl">
 
         <!-- =================================== -->
-        <!-- 1. HEADER (الرأس) - تم إضافة لون خلفية #e0f2fe (blue-100) و padding -->
+        <!-- 1. HEADER (الرأس) - تم تصحيح الاسم وتطبيق اللون الأزرق الفاتح -->
         <!-- =================================== -->
         <header class="p-6 sm:p-8 bg-blue-100 border-b-4 border-blue-300 mb-6 rounded-t-xl">
             <div class="flex flex-col sm:flex-row items-start sm:items-center">
                 
                 <!-- الصورة الشخصية -->
-                <div class="w-20 h-20 rounded-full mr-4 mb-4 sm:mb-0 overflow-hidden flex-shrink-0">
+                <div class="w-20 h-20 rounded-full ml-4 mb-4 sm:mb-0 overflow-hidden flex-shrink-0">
                     <img 
                         src="https://i.ibb.co/35LLZ3pb/Screenshot-2025-10-16-152946.png" 
-                        alt="" 
-                        onerror="this.onerror=null; this.src='https://placehold.co/80x80/cccccc/333333?text=Photo';"
+                        alt="[صورة شخصية احترافية]" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/80x80/cccccc/333333?text=صورة';"
                         class="w-full h-full object-cover">
                 </div>
                 
                 <div class="flex-grow">
-                    <h1 class="cv-header-name">Abdelmounaim Chitour</h1>
-                    <p class="text-xl font-medium text-gray-700 mt-1">Journalist, Press Editor</p>
+                    <h1 class="cv-header-name">عبد المنعم شيتور</h1>
+                    <p class="text-xl font-medium text-gray-700 mt-1">صحفي، ومحرر صحفي</p>
 
-                    <!-- تفاصيل الاتصال -->
+                    <!-- تفاصيل الاتصال (LTR داخل RTL) -->
                     <div class="text-sm mt-3 space-y-1 text-gray-700">
-                        <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse">
                             <span class="text-blue-600"><i class="fas fa-map-marker-alt"></i></span>
-                            <span class="">Msheireb, Doha, Qatar</span>
+                            <span class="">مشيرب، الدوحة، قطر</span>
                         </div>
-                        <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse">
                             <span class="text-blue-600"><i class="fas fa-phone-alt"></i></span>
                             <span class="ltr">0097450753590</span>
                         </div>
-                        <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse">
                             <span class="text-blue-600"><i class="fas fa-envelope"></i></span>
                             <span class="ltr">chitour1@hotmail.fr</span>
                         </div>
-                        <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse">
                             <span class="text-blue-600"><i class="fas fa-id-card"></i></span>
-                            <span class="ltr">ID Number: 28801200698</span>
+                            <span class="ltr">رقم الهوية: 28801200698</span>
                         </div>
                     </div>
                 </div>
@@ -127,12 +127,12 @@
 
         <div class="p-6 sm:p-10 pt-0">
             <!-- =================================== -->
-            <!-- 2. PROFESSIONAL PROFILE (ملخص مهني) - تم إضافة الاقتباس والخط المائل -->
+            <!-- 2. PROFESSIONAL PROFILE (الملف الشخصي) -->
             <!-- =================================== -->
             <section class="mb-8">
-                <h2 class="cv-section-title">Professional Profile</h2>
-                <blockquote class="italic text-gray-700 leading-relaxed text-justify border-l-4 border-blue-500 pl-4 py-1">
-                    "A media professional with over 8 years of experience in journalism, content creation, and digital marketing. Highly skilled in covering sensitive topics comprehensively, producing original and innovative content, and managing all facets of social media (publishing, paid advertising, and audience engagement). Proficient in leveraging AI tools to boost reach and credibility. Dedicated to providing constructive analysis to elevate public awareness and dialogue, demonstrating creativity and proactive leadership within team environments."
+                <h2 class="cv-section-title">الملف الشخصي</h2>
+                <blockquote class="italic text-gray-700 leading-relaxed text-justify border-r-4 border-blue-500 pr-4 py-1 border-l-0">
+                    "محترف إعلامي بخبرة تزيد عن 8 سنوات في الصحافة، إنشاء المحتوى، والتسويق الرقمي. يتمتع بمهارة عالية في تغطية المواضيع الحساسة بشكل شامل، وإنتاج محتوى أصلي ومبتكر، وإدارة جميع جوانب وسائل التواصل الاجتماعي (النشر، الإعلانات المدفوعة، والتفاعل مع الجمهور). لديه كفاءة في الاستفادة من أدوات الذكاء الاصطناعي لزيادة الوصول والمصداقية. مكرس لتقديم تحليل بناء لرفع مستوى الوعي والحوار العام، ويظهر الإبداع والقيادة الاستباقية في بيئات العمل الجماعي."
                 </blockquote>
             </section>
 
@@ -140,26 +140,26 @@
             <!-- 3. PROFESSIONAL EXPERIENCE (الخبرة المهنية) -->
             <!-- =================================== -->
             <section class="mb-8">
-                <h2 class="cv-section-title">Professional Experience</h2>
+                <h2 class="cv-section-title">الخبرة المهنية</h2>
 
                 <!-- Entry 1 -->
                 <div class="cv-entry">
-                    <div class="cv-hint">2023 -- Current</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">Media Officer, Head of Social Media Department</h3>
-                        <p class="text-gray-600 italic mb-2">Arab Center for Research and Policy Studies | Qatar</p>
-                        <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
-                            <li>Managed and promoted all news, books, studies, and programs on the center's social media platforms (Facebook, Twitter, YouTube, Instagram, Telegram, WhatsApp, BAZ).</li>
-                            <li>Provided comprehensive event coverage (pre, during, and post) to enhance public presence and engagement through live/recorded broadcasts and interactive posts.</li>
-                            <li>Executed paid promotional campaigns for live streams and publications across various digital platforms.</li>
-                            <li>Organized and archived media materials, including creating playlists for seminars and conferences on Facebook and YouTube.</li>
-                            <li>Developed targeted content (book compilations, quotes) before major events to generate audience interest.</li>
-                            <li>Conducted and published filmed statements with guests and participants from seminars.</li>
-                            <li>Created introductory scripts for books and summarized situation assessments for podcast distribution.</li>
-                            <li>Managed financial follow-up with the finance department for paid advertising and subscriptions.</li>
-                            <li>Drove audience interaction by posing engaging questions and publishing attention-grabbing content.</li>
-                            <li>Managed message responses across platforms and actively worked to expand the follower base.</li>
-                            <li>Prepared detailed performance reports for social media accounts and provided strategic recommendations.</li>
+                    <div class="cv-hint">2023 -- حالياً</div>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">مسؤول إعلامي، ورئيس قسم التواصل الاجتماعي</h3>
+                        <p class="text-gray-600 italic mb-2">المركز العربي للأبحاث ودراسة السياسات | قطر</p>
+                        <ul class="list-disc mr-5 text-sm space-y-1 text-gray-700">
+                            <li>إدارة وترويج جميع الأخبار، الكتب، الدراسات، والبرامج على منصات التواصل الاجتماعي للمركز (فيسبوك، تويتر، يوتيوب، انستغرام، تليغرام، واتساب، BAZ).</li>
+                            <li>توفير تغطية شاملة للفعاليات (ما قبل، أثناء، وما بعد) لتعزيز الحضور والتفاعل العام من خلال البث المباشر/المسجل والمشاركات التفاعلية.</li>
+                            <li>تنفيذ حملات ترويجية مدفوعة للبثوث المباشرة والمنشورات عبر مختلف المنصات الرقمية.</li>
+                            <li>تنظيم وأرشفة المواد الإعلامية، بما في ذلك إنشاء قوائم تشغيل للندوات والمؤتمرات على فيسبوك ويوتيوب.</li>
+                            <li>تطوير محتوى مستهدف (تجميعات كتب، اقتباسات) قبل الأحداث الكبرى لتوليد اهتمام الجمهور.</li>
+                            <li>إجراء ونشر تصريحات مصورة مع الضيوف والمشاركين في الندوات.</li>
+                            <li>إنشاء نصوص تمهيدية للكتب وتلخيص تقييمات الأوضاع لتوزيعها كبودكاست.</li>
+                            <li>إدارة المتابعات المالية مع قسم المالية للإعلانات المدفوعة والاشتراكات.</li>
+                            <li>قيادة التفاعل مع الجمهور من خلال طرح أسئلة جذابة ونشر محتوى لافت للنظر.</li>
+                            <li>إدارة الردود على الرسائل عبر المنصات والعمل بنشاط على توسيع قاعدة المتابعين.</li>
+                            <li>إعداد تقارير أداء مفصلة لحسابات التواصل الاجتماعي وتقديم توصيات استراتيجية.</li>
                         </ul>
                     </div>
                 </div>
@@ -167,13 +167,13 @@
                 <!-- Entry 2 -->
                 <div class="cv-entry">
                     <div class="cv-hint">2017 -- 2018</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">Director</h3>
-                        <p class="text-gray-600 italic mb-2">Al-Kashef News Network | Algeria</p>
-                        <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
-                            <li>Directed a news network covering national, regional (Arab world), and international sports and general news.</li>
-                            <li>Managed the online news portal, publishing timely and analytical articles across political, sports, cultural, and religious domains.</li>
-                            <li>Oversaw and managed all social media accounts, including content publishing, audience interaction, response to inquiries, and implementation of advertising campaigns.</li>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">مدير</h3>
+                        <p class="text-gray-600 italic mb-2">شبكة الكاشف الإخبارية | الجزائر</p>
+                        <ul class="list-disc mr-5 text-sm space-y-1 text-gray-700">
+                            <li>إدارة شبكة إخبارية تغطي الأخبار الوطنية والإقليمية (العالم العربي) والرياضية والعامة الدولية.</li>
+                            <li>إدارة البوابة الإخبارية الإلكترونية، ونشر مقالات تحليلية وفي الوقت المناسب عبر المجالات السياسية والرياضية والثقافية والدينية.</li>
+                            <li>الإشراف وإدارة جميع حسابات وسائل التواصل الاجتماعي، بما في ذلك نشر المحتوى والتفاعل مع الجمهور والرد على الاستفسارات وتنفيذ الحملات الإعلانية.</li>
                         </ul>
                     </div>
                 </div>
@@ -181,49 +181,49 @@
                 <!-- Entry 3 (Single Line) -->
                 <div class="cv-entry">
                     <div class="cv-hint">2015 -- 2017</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">General Supervisor</h3>
-                        <p class="text-gray-600 italic">"Al-Tarekh Yatathadath" (History Speaks) Program, Echourouk News Channel</p>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">مشرف عام</h3>
+                        <p class="text-gray-600 italic">برنامج "التاريخ يتحدث"، قناة الشروق الإخبارية</p>
                     </div>
                 </div>
 
                 <!-- Entry 4 (Single Line) -->
                 <div class="cv-entry">
                     <div class="cv-hint">2015</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">Preparation and Presentation</h3>
-                        <p class="text-gray-600 italic">"Al-Kashef" Program, Echourouk TV</p>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">إعداد وتقديم</h3>
+                        <p class="text-gray-600 italic">برنامج "الكاشف"، قناة الشروق TV</p>
                     </div>
                 </div>
                 
                 <!-- Entry 5 (Single Line) -->
                 <div class="cv-entry">
                     <div class="cv-hint">2013 -- 2015</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">Journalist</h3>
-                        <p class="text-gray-600 italic">Echourouk El Yaoumi (The Daily Echourouk) Newspaper | Algeria</p>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">صحفي</h3>
+                        <p class="text-gray-600 italic">جريدة الشروق اليومي | الجزائر</p>
                     </div>
                 </div>
 
                 <!-- Entry 6 (Single Line) -->
                 <div class="cv-entry">
                     <div class="cv-hint">2013 -- 2015</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">Assistant Program Preparation</h3>
-                        <p class="text-gray-600 italic">"Al-Halaka Al-Mafqouda" (The Missing Link) Program, Echourouk News Channel</p>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">مساعد إعداد البرامج</h3>
+                        <p class="text-gray-600 italic">برنامج "الحلقة المفقودة"، قناة الشروق الإخبارية</p>
                     </div>
                 </div>
 
                 <!-- Entry 7 -->
                 <div class="cv-entry">
                     <div class="cv-hint">2013 -- 2014</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">Admin</h3>
-                        <p class="text-gray-600 italic mb-2">Official Facebook Page of Echourouk El Yaoumi Newspaper</p>
-                        <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
-                            <li>Published news and motivational posts aimed at driving follower engagement.</li>
-                            <li>Monitored comments and interactions, and responded to key issues or inquiries raised by the audience.</li>
-                            <li>Enhanced content visibility and audience engagement through continuous monitoring and responsive communication.</li>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">إدارة صفحة الفيسبوك الرسمية</h3>
+                        <p class="text-gray-600 italic mb-2">لجريدة الشروق اليومي</p>
+                        <ul class="list-disc mr-5 text-sm space-y-1 text-gray-700">
+                            <li>نشر الأخبار والمشاركات التحفيزية بهدف دفع تفاعل المتابعين.</li>
+                            <li>مراقبة التعليقات والتفاعلات والرد على القضايا أو الاستفسارات الرئيسية التي يثيرها الجمهور.</li>
+                            <li>تعزيز رؤية المحتوى وتفاعل الجمهور من خلال المراقبة المستمرة والتواصل المتجاوب.</li>
                         </ul>
                     </div>
                 </div>
@@ -231,15 +231,15 @@
                 <!-- Entry 8 -->
                 <div class="cv-entry">
                     <div class="cv-hint">2023</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">Director of the Advertising and Marketing Department</h3>
-                        <p class="text-gray-600 italic mb-2">New Target for Contracting and Services | Qatar</p>
-                        <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
-                            <li>Executed advertising campaigns across various social media platforms (Facebook, Instagram, TikTok, Twitter, and Snapchat).</li>
-                            <li>Assisted in the creation of videos and designs tailored to influence the target audience effectively.</li>
-                            <li>Developed highly creative and innovative content to promote the company's brand.</li>
-                            <li>Activated paid advertisements based on a careful study of the projected budget across different platforms.</li>
-                            <li>Evaluated advertisement performance and sought out advertising opportunities beyond social media channels.</li>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">مدير قسم الإعلانات والتسويق</h3>
+                        <p class="text-gray-600 italic mb-2">نيو تارجت للمقاولات والخدمات | قطر</p>
+                        <ul class="list-disc mr-5 text-sm space-y-1 text-gray-700">
+                            <li>تنفيذ الحملات الإعلانية عبر مختلف منصات التواصل الاجتماعي (فيسبوك، انستغرام، تيك توك، تويتر، وسناب شات).</li>
+                            <li>المساعدة في إنشاء مقاطع الفيديو والتصاميم المصممة للتأثير على الجمهور المستهدف بفعالية.</li>
+                            <li>تطوير محتوى إبداعي ومبتكر للغاية للترويج لعلامة الشركة التجارية.</li>
+                            <li>تفعيل الإعلانات المدفوعة بناءً على دراسة دقيقة للميزانية المتوقعة عبر المنصات المختلفة.</li>
+                            <li>تقييم أداء الإعلانات والبحث عن فرص إعلانية خارج قنوات التواصل الاجتماعي.</li>
                         </ul>
                     </div>
                 </div>
@@ -247,23 +247,23 @@
                 <!-- Entry 9 (Single Line) -->
                 <div class="cv-entry">
                     <div class="cv-hint">2011 -- 2019</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">Analysis and Discussion Participant</h3>
-                        <p class="text-gray-600 italic">Al Arabiya and Echourouk Channels and Algerian Newspapers</p>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">مشارك في التحليل والنقاش</h3>
+                        <p class="text-gray-600 italic">قنوات العربية والشروق والصحف الجزائرية</p>
                     </div>
                 </div>
 
                 <!-- Entry 10 -->
                 <div class="cv-entry">
-                    <div class="cv-hint">Year</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">Secretary and Marketing Representative</h3>
-                        <p class="text-gray-600 italic mb-2">Magic Real Estate Company | Muaither, Qatar</p>
-                        <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
-                            <li>Managed the company's social media accounts, ensuring consistent and engaging presence.</li>
-                            <li>Prepared and drafted necessary contracts and statements for company operations.</li>
-                            <li>Assessed the quality and impact of published content by surveying audience engagement and interactions.</li>
-                            <li>Efficiently managed and responded to messages, actively following up on followers' concerns and inquiries.</li>
+                    <div class="cv-hint">سنة</div>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">سكرتير وممثل تسويق</h3>
+                        <p class="text-gray-600 italic mb-2">شركة ماجيك العقارية | معيذر، قطر</p>
+                        <ul class="list-disc mr-5 text-sm space-y-1 text-gray-700">
+                            <li>إدارة حسابات الشركة على وسائل التواصل الاجتماعي، لضمان حضور ثابت وجذاب.</li>
+                            <li>إعداد وصياغة العقود والبيانات اللازمة لعمليات الشركة.</li>
+                            <li>تقييم جودة وتأثير المحتوى المنشور من خلال مسح تفاعل الجمهور وتفاعلاته.</li>
+                            <li>إدارة الرسائل والرد عليها بكفاءة، والمتابعة النشطة لمخاوف واستفسارات المتابعين.</li>
                         </ul>
                     </div>
                 </div>
@@ -274,13 +274,23 @@
             <!-- 4. EDUCATION AND TRAINING (التعليم والتدريب) -->
             <!-- =================================== -->
             <section class="mb-8">
-                <h2 class="cv-section-title">Education and Certificates</h2>
+                <h2 class="cv-section-title">التعليم والشهادات</h2>
+
+                <!-- NEW CERTIFICATE ADDED HERE -->
+                <div class="cv-entry">
+                    <div class="cv-hint">2024</div>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">شهادة إعداد وتقديم البرامج الحوارية</h3>
+                        <p class="text-gray-600 italic">أكاديمية فضاءات | الدوحة، قطر</p>
+                    </div>
+                </div>
+                <!-- END NEW CERTIFICATE -->
 
                 <div class="cv-entry">
                     <div class="cv-hint">2011</div>
-                    <div class="cv-item-content pl-4">
-                        <h3 class="font-bold text-lg leading-tight text-gray-800">Bachelor's Degree - Islamic Sciences</h3>
-                        <p class="text-gray-600 italic">Prince Abdelkader University | Constantine, Algeria</p>
+                    <div class="cv-item-content pr-4">
+                        <h3 class="font-bold text-lg leading-tight text-gray-800">شهادة البكالوريوس - العلوم الإسلامية</h3>
+                        <p class="text-gray-600 italic">جامعة الأمير عبد القادر | قسنطينة، الجزائر</p>
                     </div>
                 </div>
             </section>
@@ -289,27 +299,27 @@
             <!-- 5. SKILLS (المهارات) -->
             <!-- =================================== -->
             <section class="mb-8">
-                <h2 class="cv-section-title">Skills</h2>
+                <h2 class="cv-section-title">المهارات</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Computer Skills -->
                     <div>
-                        <h3 class="font-bold text-blue-700 mb-2">Computer Skills</h3>
-                        <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
-                            <li>Excellent proficiency in Office programs.</li>
-                            <li>Competent in using Adobe Photoshop.</li>
-                            <li>Good proficiency in managing spider networks and blogs.</li>
-                            <li>Skilled in using Adobe Premiere for video editing and montage.</li>
+                        <h3 class="font-bold text-blue-700 mb-2">مهارات الحاسوب</h3>
+                        <ul class="list-disc mr-5 text-sm space-y-1 text-gray-700">
+                            <li>إجادة ممتازة لبرامج الأوفيس.</li>
+                            <li>كفاءة في استخدام برنامج أدوبي فوتوشوب.</li>
+                            <li>إجادة جيدة في إدارة شبكات العناكب والمدونات.</li>
+                            <li>مهارة في استخدام أدوبي بريمير لمونتاج وتحرير الفيديو.</li>
                         </ul>
                     </div>
 
                     <!-- Languages -->
                     <div>
-                        <h3 class="font-bold text-blue-700 mb-2">Languages</h3>
-                        <ul class="list-disc ml-5 text-sm space-y-1 text-gray-700">
-                            <li><strong class="font-semibold">Arabic:</strong> Proficient</li>
-                            <li><strong class="font-semibold">English:</strong> Intermediate</li>
-                            <li><strong class="font-semibold">French:</strong> Intermediate</li>
+                        <h3 class="font-bold text-blue-700 mb-2">اللغات</h3>
+                        <ul class="list-disc mr-5 text-sm space-y-1 text-gray-700">
+                            <li><strong class="font-semibold">العربية:</strong> متقن</li>
+                            <li><strong class="font-semibold">الإنجليزية:</strong> متوسط</li>
+                            <li><strong class="font-semibold">الفرنسية:</strong> متوسط</li>
                         </ul>
                     </div>
                 </div>
@@ -319,19 +329,19 @@
             <!-- 6. PORTFOLIO (محفظة الأعمال) -->
             <!-- =================================== -->
             <section class="mb-4">
-                <h2 class="cv-section-title">Portfolio</h2>
+                <h2 class="cv-section-title">محفظة الأعمال</h2>
                 
                 <div class="space-y-2 text-sm text-gray-700">
                     <div class="flex items-center">
-                        <span class="font-semibold w-40 flex-shrink-0">Visual Media Samples:</span>
+                        <span class="font-semibold w-40 flex-shrink-0">عينات أعمال مرئية:</span>
                         <a href="https://t.co/aE2G9SeIpx" target="_blank" class="text-blue-600 hover:text-blue-800 underline break-all ltr">https://t.co/aE2G9SeIpx</a>
                     </div>
                     <div class="flex items-center">
-                        <span class="font-semibold w-40 flex-shrink-0">Written Media Samples:</span>
+                        <span class="font-semibold w-40 flex-shrink-0">عينات أعمال مكتوبة:</span>
                         <a href="https://t.co/Gu4IWFV5ee" target="_blank" class="text-blue-600 hover:text-blue-800 underline break-all ltr">https://t.co/Gu4IWFV5ee</a>
                     </div>
                     <div class="flex items-center">
-                        <span class="font-semibold w-40 flex-shrink-0">Social Media Samples:</span>
+                        <span class="font-semibold w-40 flex-shrink-0">عينات أعمال التواصل الاجتماعي:</span>
                         <a href="https://t.co/B0kZFzhWTb" target="_blank" class="text-blue-600 hover:text-blue-800 underline break-all ltr">https://t.co/B0kZFzhWTb</a>
                     </div>
                 </div>
@@ -339,8 +349,7 @@
         </div>
 
         <footer class="mt-8 pt-4 border-t text-center text-sm text-gray-500">
-            <!-- تمت إزالة رقم الصفحة من هنا، حيث يتم عادة طباعتها في PDF -->
-            <p>Curriculum Vitae of Abdelmounaim Chitour</p>
+            <p>السيرة الذاتية لعبد المنعم شيتور</p>
         </footer>
     </div>
 
